@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valatines day, My Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-cream: #fdfaf6;
+            --soft-pink: #f4dcd6;
+            --rose-gold: #b784a7;
+            --deep-taupe: #5a4a42;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--warm-cream);
+            font-family: 'Quicksand', sans-serif;
+            color: var(--deep-taupe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 10px;
+        }
+
+        .date {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+            opacity: 0.7;
+        }
+
+        .romantic-para {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--rose-gold);
+            font-weight: bold;
+        }
+
+        .footer-sig {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        /* Cozy Decorative Elements */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: var(--soft-pink);
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts-bg" id="hearts-container"></div>
+
+    <div class="container">
+        <div class="date">February 14th, 2026</div>
+        <img src="mygirl.jpg" style="width:70%; border-radius:5px; margin-bottom:20px;">
+        <h1>Happy Valatines, Babyyy</h1>
+        
+        <div class="romantic-para">
+            Heyy sweetheart, I can't express my love for yeww by words. I love yeww the way you are, I'll support you for your dreams no matter what, <span class="highlight">you are so gorgeous everytime I see yeww feels like its the first time.</span> Thanks for making me feel loved.
+            <br><br>
+            the way your hand feels in mine, the sound of your laugh when we’re doing absolutely nothing, and the effortless way you make the world feel like a kinder place just by being in it. <span class="highlight"> You are my peace in the middle of the noise and my home no matter where we are. </span> Thank you for choosing me every day and for loving me in a way that makes everything else make sense. I don’t just love you for who you are, but for the person I’ve become since I met you. 
+            <br><br>
+            I hope today is as <span class="highlight">gentle and radiant</span> as your smile. Thank you for being my peace, my laughter, and my favorite person to dream with. Today is all about celebrating the incredible woman you are, and I am the luckiest person to be by your side.
+        </div>
+
+        <div class="footer-sig">Forever Yours, <br> Sudarsha </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            container.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 400);
+    </script>
+</body>
+</html>
